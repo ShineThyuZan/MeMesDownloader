@@ -1,7 +1,6 @@
 package com.example.cocktailrecipe.utils
 
 import android.annotation.TargetApi
-import android.arch.lifecycle.LiveData
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Context.CONNECTIVITY_SERVICE
@@ -12,6 +11,7 @@ import android.net.Network
 import android.net.NetworkInfo
 import android.net.NetworkRequest
 import android.os.Build
+import androidx.lifecycle.LiveData
 
 class ConnectionLiveData(val context: Context) : LiveData<Boolean>() {
 

@@ -7,5 +7,11 @@ class AppConstants {
         const val PARAM_NON_ALCOHOLIC = "Non_Alcoholic"
 
     }
+    enum class COMMENTTYPE {
+        HEADER,
+        ITEM
+    }
+
+
 
 }

@@ -4,13 +4,19 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+<!--    android:name=".AmhantayarApp"-->
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
+            android:largeHeap="true"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
+            android:theme="@style/AppTheme"
+            tools:replace="android:appComponentFactory"
+            android:appComponentFactory="whateverString"
+          >
         <activity android:name=".activities.CocktailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

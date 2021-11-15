@@ -1,13 +1,8 @@
 package com.example.cocktailrecipe.viewHolder
 
-import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.widget.Toast
-import com.bumptech.glide.Glide
-import com.example.cocktailrecipe.R
-import com.example.cocktailrecipe.data.vo.CocatailVo
+import androidx.recyclerview.widget.RecyclerView
 import com.example.cocktailrecipe.data.vo.IngredientVo
-import com.example.cocktailrecipe.delegate.CocatailDelegate
 import kotlinx.android.synthetic.main.viewholder_cocktail.view.*
 import kotlinx.android.synthetic.main.viewholder_ingredient.view.*
 

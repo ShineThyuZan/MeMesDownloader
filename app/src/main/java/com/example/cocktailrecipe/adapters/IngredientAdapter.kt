@@ -1,17 +1,23 @@
 package com.example.cocktailrecipe.adapters
 
-import android.support.v7.widget.RecyclerView
+import android.os.Parcel
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.cocktailrecipe.data.vo.IngredientVo
 import com.example.cocktailrecipe.viewHolder.IngredientViewHolder
 import java.util.*
 
 
-class IngredientAdapter : RecyclerView.Adapter<IngredientViewHolder>() {
+class IngredientAdapter() : RecyclerView.Adapter<IngredientViewHolder>(), Parcelable {
 
 
     private var ingredientList: MutableList<IngredientVo>? = null
+
+    constructor(parcel: Parcel) : this() {
+
+    }
 
 
     init {
@@ -56,4 +62,23 @@ class IngredientAdapter : RecyclerView.Adapter<IngredientViewHolder>() {
         this.ingredientList = ArrayList()
         notifyDataSetChanged()
     }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<IngredientAdapter> {
+        override fun createFromParcel(parcel: Parcel): IngredientAdapter {
+            return IngredientAdapter(parcel)
+        }
+
+        override fun newArray(size: Int): Array<IngredientAdapter?> {
+            return arrayOfNulls(size)
+        }
+    }
+
 }

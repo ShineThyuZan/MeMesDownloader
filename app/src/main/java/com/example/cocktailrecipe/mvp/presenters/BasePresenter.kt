@@ -1,7 +1,8 @@
 package com.example.cocktailrecipe.mvp.presenters
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+
 
 abstract class BasePresenter<T> : ViewModel() {
     protected lateinit var mErrorLD: MutableLiveData<String>
