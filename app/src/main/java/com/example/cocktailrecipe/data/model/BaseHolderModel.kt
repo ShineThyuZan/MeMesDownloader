@@ -7,10 +7,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-
-
-
-
 class BaseHolderModel : RetrofitProvider() {
     companion object {
         private var instance: BaseHolderModel? = null
@@ -27,7 +23,8 @@ class BaseHolderModel : RetrofitProvider() {
     }
 
     fun loadCocktails(
-        mCocatailLD: MutableLiveData<CocatailVos>, mErrorLD: MutableLiveData<String>
+        mCocatailLD: MutableLiveData<CocatailVos>,
+        mErrorLD: MutableLiveData<String>
     ): Disposable {
         return mTheApi.loadCocktailList()
             .subscribeOn(Schedulers.io())
@@ -41,13 +38,14 @@ class BaseHolderModel : RetrofitProvider() {
     }
 
     fun loadCocktailDetail(
+        cocktailId: String,
         mCocatailLD: MutableLiveData<CocatailVos>,
-        mErrorLD: MutableLiveData<String>,
-        cocktailId: String
+        mErrorLD: MutableLiveData<String>
+
     ): Disposable {
-        val params = HashMap<String, String>()
-        params["i"] = cocktailId
-        return mTheApi.loadCocktailDetails(params)
+//        val params = HashMap<String, String>()
+//        params["i"] = cocktailId
+        return mTheApi.loadCocktailDetails(cocktailId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({

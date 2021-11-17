@@ -21,14 +21,10 @@ class CocktailViewHolder(
             .load(mData.strDrinkThumb)
             .placeholder(R.drawable.placeholder)
             .into(itemView.iv_show)
-
-
     }
 
     override fun onClick(v: View?) {
         delegate.onTapCocatail(mData)
-
-
     }
 
 }

@@ -35,6 +35,10 @@ class CocktailDetailsActivity : BaseActivity(), CocktailDetailView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cocktail_detail)
+
+
+
+
 //        mPresenter = ViewModelProviders.of(this).get(CocktailDetailPresenter::class.java)
 //        mPresenter.initPresenter(this)
 //        cocktailId = intent.getStringExtra(IE_COCKTAIL_ID)

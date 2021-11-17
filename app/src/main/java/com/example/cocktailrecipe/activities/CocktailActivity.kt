@@ -47,6 +47,9 @@ class CocktailActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener, C
 
     override fun onTapCocatail(cocatailVo: CocatailVo) {
         Toast.makeText(this, cocatailVo.idDrink, Toast.LENGTH_LONG).show()
+        startActivity(CocktailDetailsActivity.newIntent(this, cocatailVo.idDrink))
+
+
     }
 
     private fun observe() {

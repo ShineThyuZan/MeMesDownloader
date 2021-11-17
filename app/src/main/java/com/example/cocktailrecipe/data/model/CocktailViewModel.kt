@@ -26,13 +26,13 @@ class CocktailViewModel : BaseViewModel() {
         )
     }
 
-    fun getCocktailListDetail(cocktailId : String ){
+    fun getCocktailListDetail(cocktailId: String) {
         mCompositeDisposable.add(
             BaseHolderModel.getObj().loadCocktailDetail(
-
+                cocktailId,
                 cocktailListDetailResponse,
-                mErrorLD,
-                cocktailId
+                mErrorLD
+
             )
         )
     }
