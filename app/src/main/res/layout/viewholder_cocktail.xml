@@ -25,13 +25,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textSize="@dimen/text_regular_2x"
-                android:background="@android:drawable/screen_background_dark_transparent"
+                android:textSize="@dimen/text_regular"
+                android:background="@drawable/color_gradient"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="@id/iv_show"
                 android:textColor="@android:color/white"
-                android:padding="@dimen/margin_medium_2"
+                android:padding="@dimen/margin_medium"
                 android:paddingTop="@dimen/margin_medium"
                 android:paddingBottom="@dimen/margin_medium"/>
 

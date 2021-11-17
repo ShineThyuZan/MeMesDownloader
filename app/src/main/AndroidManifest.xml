@@ -17,7 +17,9 @@
             tools:replace="android:appComponentFactory"
             android:appComponentFactory="whateverString"
           >
-        <activity android:name=".activities.CocktailActivity">
+        <activity android:name=".activities.CocktailActivity"
+                android:theme="@style/AppTheme.NoActionBar"
+                >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

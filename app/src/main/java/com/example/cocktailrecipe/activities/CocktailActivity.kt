@@ -26,6 +26,7 @@ class CocktailActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener, C
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cocatail)
 
+        progressBar.visibility = View.VISIBLE
         // Model create to use this Activity
         mViewCocktailViewModel = ViewModelProviders.of(this@CocktailActivity)
             .get(CocktailViewModel::class.java)
@@ -49,13 +50,12 @@ class CocktailActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener, C
         Toast.makeText(this, cocatailVo.idDrink, Toast.LENGTH_LONG).show()
         startActivity(CocktailDetailsActivity.newIntent(this, cocatailVo.idDrink))
 
-
     }
 
     private fun observe() {
         mViewCocktailViewModel.catailListResponse.observe(this, Observer {
 
-            pBar.visibility = View.GONE
+            progressBar.visibility = View.GONE
             // set cocktail list data to Adapter
             mCocktailListData = it?.drinks as MutableList<CocatailVo>
             cocktailAdapter.setNewDataList(mCocktailListData)
