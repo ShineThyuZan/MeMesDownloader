@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="com.example.cocktailrecipe">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.example.cocktailrecipe">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-<!--    android:name=".AmhantayarApp"-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--    android:name=".AmhantayarApp"-->
 
     <application
             android:allowBackup="true"
@@ -15,20 +16,22 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:replace="android:appComponentFactory"
-            android:appComponentFactory="whateverString"
-          >
-        <activity android:name=".activities.CocktailActivity"
-                android:theme="@style/AppTheme.NoActionBar"
-                >
+            android:appComponentFactory="whateverString">
+        <activity
+                android:name=".activities.ReCaptchaActivity"
+                android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.CocktailDetailsActivity"
-                  android:theme="@style/AppTheme.NoActionBar"
-        />
+        <activity
+                android:name=".activities.CocktailDetailsActivity"
+                android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+                android:name=".activities.BResultActivity"
+                android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
