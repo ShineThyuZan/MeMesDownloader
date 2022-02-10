@@ -2,4 +2,5 @@
     <string name="app_name">CocktailRecipe</string>
     <string name="descripiton">Descripiton</string>
     <string name="ingerdient">Ingerdient</string>
+    <string name="marque_text">Welcome Guys!!</string>
 </resources>

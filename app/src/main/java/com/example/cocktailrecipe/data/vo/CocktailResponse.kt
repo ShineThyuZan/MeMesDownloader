@@ -1,5 +1,5 @@
 package com.example.cocktailrecipe.data.vo
 
 
-class CocatailVos(
+class CocktailResponse(
 var drinks: MutableList<CocatailVo>)

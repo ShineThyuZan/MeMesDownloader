@@ -1,26 +1,29 @@
 package com.example.cocktailrecipe.viewHolder
 
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.cocktailrecipe.R
 import com.example.cocktailrecipe.data.vo.CocatailVo
 import com.example.cocktailrecipe.delegate.CocatailDelegate
-import kotlinx.android.synthetic.main.viewholder_cocktail.view.*
 
 class CocktailViewHolder(
     itemView: View,
-    val delegate: CocatailDelegate
+    private val delegate: CocatailDelegate
 ) :
     BaseViewHolder<CocatailVo>(itemView) {
 
     override fun setData(data: CocatailVo) {
+        val tvBottom = itemView.findViewById<TextView>(R.id.tv_bottom)
+        val imgShow = itemView.findViewById<ImageView>(R.id.iv_show)
         mData = data
-        itemView.tv_bottom.text = mData.strDrink
+        tvBottom.text = mData.strDrink
 
         Glide.with(itemView.context)
             .load(mData.strDrinkThumb)
             .placeholder(R.drawable.placeholder)
-            .into(itemView.iv_show)
+            .into(imgShow)
     }
 
     override fun onClick(v: View?) {

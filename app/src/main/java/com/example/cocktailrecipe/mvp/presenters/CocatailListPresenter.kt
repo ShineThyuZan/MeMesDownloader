@@ -1,11 +1,5 @@
 package com.example.cocktailrecipe.mvp.presenters
 
-import com.example.cocktailrecipe.data.model.RetrofitProvider
-import com.example.cocktailrecipe.data.vo.CocatailVo
-import com.example.cocktailrecipe.data.vo.CocatailVos
-import com.example.cocktailrecipe.delegate.CocatailDelegate
-import com.example.cocktailrecipe.mvp.views.CocatailListView
-
 //open class CocatailListPresenter : CocatailDelegate, BasePresenter<CocatailListView>() {
 //
 //

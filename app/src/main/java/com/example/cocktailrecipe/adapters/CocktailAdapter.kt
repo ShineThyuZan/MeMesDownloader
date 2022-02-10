@@ -8,7 +8,6 @@ import com.example.cocktailrecipe.delegate.CocatailDelegate
 import com.example.cocktailrecipe.viewHolder.BaseViewHolder
 import com.example.cocktailrecipe.viewHolder.CocktailViewHolder
 
-
 class CocktailAdapter(context: Context, val delegate: CocatailDelegate) :
     BaseRecyclerAdapter<CocktailViewHolder, CocatailVo>(context) {
 
@@ -23,7 +22,6 @@ class CocktailAdapter(context: Context, val delegate: CocatailDelegate) :
             delegate.onTapCocatail(mData!![position])
         }
     }
-
 }
 
 

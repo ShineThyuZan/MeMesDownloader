@@ -1,9 +1,5 @@
 package com.example.cocktailrecipe.mvp.presenters
 
-import com.example.cocktailrecipe.data.model.RetrofitProvider
-import com.example.cocktailrecipe.data.vo.CocatailVos
-import com.example.cocktailrecipe.mvp.views.CocktailDetailView
-
 //class CocktailDetailPresenter : BasePresenter<CocktailDetailView>() {
 //
 //    private lateinit var mView: CocktailDetailView

@@ -2,18 +2,12 @@ package com.example.cocktailrecipe.activities
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Typeface
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-
-import com.bumptech.glide.Glide
 import com.example.cocktailrecipe.R
 import com.example.cocktailrecipe.adapters.IngredientAdapter
 import com.example.cocktailrecipe.data.vo.CocatailVo
 import com.example.cocktailrecipe.data.vo.IngredientVo
 import com.example.cocktailrecipe.mvp.views.CocktailDetailView
-import kotlinx.android.synthetic.main.activity_cocktail_detail.*
 
 
 class CocktailDetailsActivity : BaseActivity(), CocktailDetailView {
@@ -35,8 +29,6 @@ class CocktailDetailsActivity : BaseActivity(), CocktailDetailView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cocktail_detail)
-
-
 
 
 //        mPresenter = ViewModelProviders.of(this).get(CocktailDetailPresenter::class.java)
@@ -73,11 +65,11 @@ class CocktailDetailsActivity : BaseActivity(), CocktailDetailView {
     }
 
     override fun displayCotailDetail(cocatailVo: CocatailVo) {
-        Glide.with(ivCocktailDetail)
-            .load(cocatailVo.strDrinkThumb)
-            .placeholder(R.drawable.placeholder)
-            .error(R.drawable.placeholder)
-            .into(ivCocktailDetail)
+        /* Glide.with(cocatailVo.)
+             .load(cocatailVo.strDrinkThumb)
+             .placeholder(R.drawable.placeholder)
+             .error(R.drawable.placeholder)
+             .into(this.findViewById<ImageView>(R.id.ivCocktailDetail))*/
 
         intgredientList = ArrayList()
         intgredientList.add(IngredientVo(cocatailVo.strIngredient1, cocatailVo.strMeasure1))
@@ -85,11 +77,11 @@ class CocktailDetailsActivity : BaseActivity(), CocktailDetailView {
         intgredientList.add(IngredientVo(cocatailVo.strIngredient3, cocatailVo.strMeasure3))
         ingredientAdapter = IngredientAdapter()
         ingredientAdapter.setIngredientList(intgredientList)
-        rvIngredient.adapter = ingredientAdapter
-        rvIngredient.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        tvDescription.text = cocatailVo.strInstructions
-        tvToolbar.text = cocatailVo.strDrink
-        tvToolbar.setTypeface(null, Typeface.BOLD)
+//        rvIngredient.adapter = ingredientAdapter
+//        rvIngredient.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+//        tvDescription.text = cocatailVo.strInstructions
+//        tvToolbar.text = cocatailVo.strDrink
+//        tvToolbar.setTypeface(null, Typeface.BOLD)
     }
 
 

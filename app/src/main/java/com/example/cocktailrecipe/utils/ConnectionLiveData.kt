@@ -56,17 +56,18 @@ class ConnectionLiveData(val context: Context) : LiveData<Boolean>() {
         connectivityManager.registerNetworkCallback(builder.build(), getConnectivityManagerCallback())
     }
 
+
     private fun getConnectivityManagerCallback(): ConnectivityManager.NetworkCallback {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
             connectivityManagerCallback = object : ConnectivityManager.NetworkCallback() {
-                override fun onAvailable(network: Network?) {
+                /*override fun onAvailable(network: Network?) {
                     postValue(true)
                 }
 
                 override fun onLost(network: Network?) {
                     postValue(false)
-                }
+                }*/
             }
             return connectivityManagerCallback
         } else {

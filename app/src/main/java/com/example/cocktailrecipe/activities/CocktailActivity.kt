@@ -3,20 +3,20 @@ package com.example.cocktailrecipe.activities
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.RecyclerView
 import com.example.cocktailrecipe.R
 import com.example.cocktailrecipe.adapters.CocktailAdapter
 import com.example.cocktailrecipe.data.model.CocktailViewModel
 import com.example.cocktailrecipe.data.vo.CocatailVo
 import com.example.cocktailrecipe.delegate.CocatailDelegate
-import kotlinx.android.synthetic.main.activity_cocatail.*
 
 
-class CocktailActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener, CocatailDelegate {
+class CocktailActivity : BaseActivity(), CocatailDelegate {
 
     private lateinit var cocktailAdapter: CocktailAdapter
     private lateinit var mViewCocktailViewModel: CocktailViewModel
@@ -41,9 +41,6 @@ class CocktailActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener, C
 
     }
 
-    override fun onRefresh() {
-
-    }
 
     override fun onTapCocatail(cocatailVo: CocatailVo) {
         Toast.makeText(this, cocatailVo.idDrink, Toast.LENGTH_LONG).show()
@@ -55,16 +52,15 @@ class CocktailActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener, C
     private fun observe() {
         mViewCocktailViewModel.catailListResponse.observe(this, Observer {
 
-            pBar.visibility = View.GONE
+            this.findViewById<ProgressBar>(R.id.pBar).visibility = View.GONE
             // set cocktail list data to Adapter
             mCocktailListData = it?.drinks as MutableList<CocatailVo>
             cocktailAdapter.setNewDataList(mCocktailListData)
 
-            rvCocatail.adapter = cocktailAdapter
-            rvCocatail.layoutManager =
-                GridLayoutManager(this, 2)
-            rvCocatail.setHasFixedSize(true)
-
+            this.findViewById<RecyclerView>(R.id.rvCocatail).apply {
+                layoutManager = GridLayoutManager(context, 2)
+                setHasFixedSize(true)
+            }.adapter = cocktailAdapter
 
         })
         // show error

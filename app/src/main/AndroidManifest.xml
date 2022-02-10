@@ -1,32 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="com.example.cocktailrecipe">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.example.cocktailrecipe">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-<!--    android:name=".AmhantayarApp"-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION " />
+    <!--    android:name=".AmhantayarApp"-->
 
     <application
+            android:name=".App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:largeHeap="true"
             android:supportsRtl="true"
+            android:requestLegacyExternalStorage="true"
             android:theme="@style/AppTheme"
             tools:replace="android:appComponentFactory"
             android:appComponentFactory="whateverString"
-          >
-        <activity android:name=".activities.CocktailActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            tools:targetApi="p">
+        <activity
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                android:name=".activities.MeMePhotoShowActivity"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.CocktailDetailsActivity"
-                  android:theme="@style/AppTheme.NoActionBar"
-        />
+        <activity
+                android:exported="true"
+                android:name=".activities.CocktailDetailsActivity"
+                android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+                android:name=".activities.FullScreenImageActivity"
+                android:screenOrientation="fullSensor"
+                android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
