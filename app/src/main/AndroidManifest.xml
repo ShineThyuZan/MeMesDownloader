@@ -9,7 +9,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION " />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
     <!--    android:name=".AmhantayarApp"-->
+
 
     <application
             android:name=".App"
@@ -24,8 +26,12 @@
             tools:replace="android:appComponentFactory"
             android:appComponentFactory="whateverString"
             tools:targetApi="p">
-        <activity
 
+        <meta-data
+                android:name="com.google.android.gms.ads.APPLICATION_ID"
+                android:value="ca-app-pub-5877882061775048~7243780217"/>
+
+        <activity
                 android:name=".activities.MeMePhotoShowActivity"
                 android:exported="true">
             <intent-filter>
@@ -43,6 +49,9 @@
                 android:name=".activities.FullScreenImageActivity"
                 android:screenOrientation="fullSensor"
                 android:theme="@style/AppTheme.NoActionBar" />
+
+                <!-- Sample Ad Manager app ID: ca-app-pub-3940256099942544~3347511713 -->
+
     </application>
 
 </manifest>

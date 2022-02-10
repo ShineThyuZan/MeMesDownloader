@@ -11,18 +11,27 @@ import com.example.cocktailrecipe.adapters.MemePhotoListAdapter
 import com.example.cocktailrecipe.data.model.CocktailViewModel
 import com.example.cocktailrecipe.data.vo.MemeData
 import com.example.cocktailrecipe.delegate.MeMePhotoItemDelegate
-
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 
 class MeMePhotoShowActivity : BaseActivity(), MeMePhotoItemDelegate {
     private lateinit var memePhotoListAdapter: MemePhotoListAdapter
     private lateinit var mViewModel: CocktailViewModel
     private lateinit var mMemeListData: MutableList<MemeData>
+    private var mAdView : AdView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activit_meme_list)
 
-        // Model create to use this Activity
+
+        MobileAds.initialize(this) {
+            mAdView = findViewById(R.id.adView)
+           val adRequest = AdRequest.Builder().build()
+            mAdView!!.loadAd(adRequest)
+        }
+
         mViewModel = ViewModelProviders.of(this@MeMePhotoShowActivity)
             .get(CocktailViewModel::class.java)
 
