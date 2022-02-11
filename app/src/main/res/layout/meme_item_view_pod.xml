@@ -6,9 +6,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:layout_margin="4dp"
+        android:layout_margin="@dimen/_4sdp"
         app:cardElevation="4dp"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="@dimen/_4sdp"
         >
 
     <androidx.constraintlayout.widget.ConstraintLayout

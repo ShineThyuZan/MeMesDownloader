@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+            android:id="@+id/menu_top"
+            android:checkableBehavior="single">
+        <item
+                android:id="@+id/idVersion"
+                android:icon="@drawable/ic_company_logo"
+                android:title="Version" >
+            <menu android:checkableBehavior="all">
+                <item
+                        android:id="@+id/idVersionClick"
+                        android:title="1.0" />
+            </menu>
+        </item>
+    </group>
+    <group
+            android:id="@+id/menu_bottom"
+            android:checkableBehavior="single">
+        <item
+                android:id="@+id/idCompany"
+                android:icon="@drawable/ic_company_logo"
+                android:title="Company" >
+            <menu android:checkableBehavior="all">
+                <item
+                        android:id="@+id/idCompanyClick"
+                        android:title="Galaxy Po" />
+            </menu>
+        </item>
+
+    </group>
+
+
+</menu>
