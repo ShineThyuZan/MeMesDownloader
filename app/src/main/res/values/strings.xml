@@ -2,8 +2,12 @@
     <string name="app_name">MeMe Generator</string>
     <string name="descripiton">Descripiton</string>
     <string name="ingerdient">Ingerdient</string>
-    <string name="marque_text">Welcome Guys!! Can Search by naming</string>
+    <string name="marque_text">Search</string>
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="banner_ad_unit_app">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="title_activity_yar_yar">YarYarActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>

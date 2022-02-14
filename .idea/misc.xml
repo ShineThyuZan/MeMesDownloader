@@ -8,13 +8,21 @@
         <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/drawable/ic_arrow_back_black_24dp.xml" value="0.25833333333333336" />
         <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/drawable/ic_baseline_save_alt_24.xml" value="0.25833333333333336" />
         <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/drawable/ic_company_logo.xml" value="0.1" />
+        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/drawable/ic_offline.xml" value="0.17592592592592593" />
+        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/drawable/ic_toolbar.xml" value="0.25833333333333336" />
         <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/drawable/ic_ui.xml" value="0.25435897435897437" />
-        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/activit_meme_list.xml" value="0.2" />
+        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/activit_meme_list.xml" value="0.1" />
         <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/activity_cocatail.xml" value="0.1358695652173913" />
-        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/activity_full_screen_image.xml" value="0.152" />
+        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/activity_full_screen_image.xml" value="0.1" />
+        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/activity_yar_yar.xml" value="0.2421875" />
         <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/dialog_exit_confirmation.xml" value="0.1" />
+        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/fragment_meme_pager.xml" value="0.1" />
+        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/fragment_meme_photo.xml" value="0.264" />
         <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/meme_item_view_pod.xml" value="0.152" />
         <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/playground.xml" value="0.2421875" />
+        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/single_product_viewpod.xml" value="0.264" />
+        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/layout/view_holder_loadmore.xml" value="0.2421875" />
+        <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/menu/bottom_nav_menu.xml" value="0.10256410256410256" />
         <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/menu/drawer_layout_menu.xml" value="0.1" />
         <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Android Projects/CocktailRecipeMVVM_Architecture/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.10648148148148148" />

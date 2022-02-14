@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginEnd="@dimen/_8sdp"
+    android:layout_marginTop="@dimen/_16sdp"
+    android:layout_width="match_parent"
+    android:layout_marginStart="@dimen/_8sdp"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvProductImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/browser_actions_bg_grey"
+        app:strokeWidth="0.1dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivProduct"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_140sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_offline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvCartProductName"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/dmsans_regular"
+        android:maxLines="2"
+        android:text="Samsung A02s"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_14sdp"
+       app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvProductImage" />
+
+    <TextView
+            android:layout_marginTop="@dimen/_4sdp"
+            android:id="@+id/tvTopText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="1 pic, prices"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCartProductName"
+            app:layout_constraintBottom_toTopOf="@+id/tvRating" />
+
+    <TextView
+            android:layout_marginTop="@dimen/_4sdp"
+            android:id="@+id/tvRating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_regular"
+            android:textColor="@color/design_default_color_error"
+            android:text="Rating - "
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTopText"
+            />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

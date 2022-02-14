@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        package="com.example.cocktailrecipe">
+        package="com.tpo.cocktailrecipe">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -9,27 +9,25 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION " />
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
-    <!--    android:name=".AmhantayarApp"-->
-
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
     <application
             android:name=".App"
             android:allowBackup="true"
+            android:appComponentFactory="whateverString"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
             android:largeHeap="true"
-            android:supportsRtl="true"
             android:requestLegacyExternalStorage="true"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:replace="android:appComponentFactory"
-            android:appComponentFactory="whateverString"
             tools:targetApi="p">
 
         <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
-                android:value="ca-app-pub-5877882061775048~7243780217"/>
+                android:value="ca-app-pub-5877882061775048~7243780217" />
 
         <activity
                 android:name=".activities.MeMePhotoShowActivity"
@@ -41,17 +39,13 @@
             </intent-filter>
         </activity>
         <activity
-                android:exported="true"
                 android:name=".activities.CocktailDetailsActivity"
+                android:exported="true"
                 android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
                 android:name=".activities.FullScreenImageActivity"
                 android:screenOrientation="fullSensor"
                 android:theme="@style/AppTheme.NoActionBar" />
-
-                <!-- Sample Ad Manager app ID: ca-app-pub-3940256099942544~3347511713 -->
-
     </application>
 
 </manifest>
