@@ -14,17 +14,16 @@ interface BaseAPI {
     @GET("filter.php?a=Non_Alcoholic")
     fun loadCocktailList(): Observable<CocktailResponse>
 
-    //https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=12692
     @GET("lookup.php")
-    fun loadCocktailDetails(@Query("i")  params: String): Observable<CocktailResponse>
-   // fun loadCocktailDetails(@QueryMap params: Map<String, String>): Observable<CocatailVos>
+    fun loadCocktailDetails(@Query("i") params: String): Observable<CocktailResponse>
+    // fun loadCocktailDetails(@QueryMap params: Map<String, String>): Observable<CocatailVos>
 
-   @GET("https://api.imgflip.com/get_memes")
-   fun getMeMePhotoList(): Observable<MeMeResponse>
+    @GET("https://api.imgflip.com/get_memes")
+    fun getMeMePhotoList(): Observable<MeMeResponse>
 
-   @GET("http://alpha-meme-maker.herokuapp.com/{pageNo}")
-   fun getMeMePhotoPager(
-       @Path("pageNo") userId: Int
-   ) : Observable<MeMePagerResponse>
+    @GET("https://meme-api.com/gimme/wholesomememes/{count}")
+    fun getMeMePhotoPager(
+        @Path("count") count: Int
+    ): Observable<MeMePagerResponse>
 
 }

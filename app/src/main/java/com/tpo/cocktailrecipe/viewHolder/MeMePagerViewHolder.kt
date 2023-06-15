@@ -25,11 +25,11 @@ class MeMePagerViewHolder(itemView: View, val delegate: MeMePagerItemClickDelega
         ratingText = itemView.findViewById<View>(R.id.tvRating) as TextView
         mData = data
         Glide.with(itemView.context)
-            .load(mData.image)
+            .load(mData.url)
             .into(imageView!!)
-        itemName!!.text = mData.name
-        topTextName!!.text = mData.topText
-        ratingText!!.text = mData.rank.toString()
+        itemName!!.text = mData.title
+        topTextName!!.text = mData.subreddit
+        ratingText!!.text = mData.ups.toString()
 
     }
 
