@@ -1,6 +1,6 @@
 package com.tpo.cocktailrecipe.data.vo
 
 class MeMePagerResponse(
-    var code: String,
-    var data: List<MeMePagerData>
+    var count: Int,
+    var memes: List<MeMePagerData>
 )

@@ -25,7 +25,7 @@ class MeMePhotoPagerFragment : BaseFragment() {
     private lateinit var mViewModel: CocktailViewModel
     private var mAdView: AdView? = null
     private lateinit var memeDataList: MutableList<MeMePagerData>
-    private var pageNumber = 1
+    private var pageNumber = 25
     private var firstTime = true
     private var isLoading = false
 
@@ -51,9 +51,9 @@ class MeMePhotoPagerFragment : BaseFragment() {
                     startActivity(
                         FullScreenImageActivity.newIntent(
                             requireContext(),
-                            data.image,
-                            data.name,
-                            data.rank.toString()
+                            data.url,
+                            data.title,
+                            data.ups.toString()
                         )
                     )
                 }
@@ -78,12 +78,12 @@ class MeMePhotoPagerFragment : BaseFragment() {
     private fun observe() {
         mViewModel.memePagerListResponse.observe(requireActivity(), Observer {
 
-            if (it.code == "200") {
+            if (it.count.toString().isNotEmpty()) {
                 mView.findViewById<ImageView>(R.id.ivOffline).visibility = View.GONE
                 isLoading = false
                 memePhotoPagerAdapter.isLoading(isLoading)
 
-                if (it.data.isEmpty()) {
+                if (it.memes.isEmpty()) {
                     memePhotoPagerAdapter.isLastPage(true)
                     if (firstTime) {
                         isLoading = true
@@ -91,12 +91,12 @@ class MeMePhotoPagerFragment : BaseFragment() {
                     }
                 } else {
                     firstTime = false
-                    if (it.data.size < 10) {
+                    if (it.memes.size < 10) {
                         memePhotoPagerAdapter.isLastPage(true)
                     } else {
                         memePhotoPagerAdapter.isLastPage(false)
                     }
-                    memePhotoPagerAdapter.appendNewData(it.data)
+                    memePhotoPagerAdapter.appendNewData(it.memes)
                 }
 
 //                memeDataList = it.data as MutableList<MeMePagerData>
