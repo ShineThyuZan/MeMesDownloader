@@ -74,6 +74,4 @@ dependencies {
     def multidex_v = '2.0.1'
     implementation "androidx.multidex:multidex:$multidex_v"
     implementation "androidx.viewpager2:viewpager2:1.0.0"
-
-
 }
