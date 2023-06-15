@@ -12,8 +12,6 @@ import java.util.concurrent.TimeUnit
 open class RetrofitProvider {
 
     protected var mTheApi: BaseAPI
-
-
     init {
         val okHttpClient = OkHttpClient.Builder()
             .connectTimeout(60, TimeUnit.SECONDS)
@@ -27,6 +25,5 @@ open class RetrofitProvider {
             .client(okHttpClient)
             .build()
         mTheApi = retrofit.create(BaseAPI::class.java)
-
     }
 }

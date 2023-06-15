@@ -2,7 +2,6 @@ package com.tpo.cocktailrecipe.data.model
 
 
 import androidx.lifecycle.MutableLiveData
-import com.tpo.cocktailrecipe.data.vo.CocktailResponse
 import com.tpo.cocktailrecipe.data.vo.MeMePagerResponse
 import com.tpo.cocktailrecipe.data.vo.MeMeResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -21,22 +20,6 @@ class BaseHolderModel : RetrofitProvider() {
             val i = instance
             return i!!
         }
-
-    }
-
-    fun loadCocktails(
-        mCocatailLD: MutableLiveData<CocktailResponse>,
-        mErrorLD: MutableLiveData<String>
-    ): Disposable {
-        return mTheApi.loadCocktailList()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                mCocatailLD.value = it
-            },
-                {
-                    mErrorLD.value = it.localizedMessage
-                })
     }
 
     fun getMeMeListPhoto(
@@ -69,28 +52,5 @@ class BaseHolderModel : RetrofitProvider() {
                     mErrorLD.value = it.localizedMessage
                 })
     }
-
-
-
-
-    fun loadCocktailDetail(
-        cocktailId: String,
-        mCocatailLD: MutableLiveData<CocktailResponse>,
-        mErrorLD: MutableLiveData<String>
-
-    ): Disposable {
-//        val params = HashMap<String, String>()
-//        params["i"] = cocktailId
-        return mTheApi.loadCocktailDetails(cocktailId)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                mCocatailLD.value = it
-            },
-                {
-                    mErrorLD.value = it.localizedMessage
-                })
-    }
-
 
 }
