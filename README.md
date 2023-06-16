@@ -16,6 +16,7 @@
 + Glide Image Library
 + Android recycler view
 + Animation Xml
++ View Pager
 
 ### Show Sample Screen 
 <div style="display: flex; justify-content: center; padding: 50px; ">
