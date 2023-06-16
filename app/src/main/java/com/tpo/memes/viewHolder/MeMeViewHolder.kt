@@ -23,7 +23,7 @@ class MeMeViewHolder(
         mData = data
 
         tvItemName.text = mData.name
-        tvWidth.text =  mData.width.toString()
+        tvWidth.text = mData.width.toString()
         tvHeight.text = "${mData.height} x"
 
 

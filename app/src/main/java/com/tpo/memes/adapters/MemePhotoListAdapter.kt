@@ -8,7 +8,7 @@ import com.tpo.memes.delegate.MeMePhotoItemDelegate
 import com.tpo.memes.viewHolder.BaseViewHolder
 import com.tpo.memes.viewHolder.MeMeViewHolder
 
-class MemePhotoListAdapter(context: Context, val delegate: MeMePhotoItemDelegate) :
+class MemePhotoListAdapter(context: Context,private val delegate: MeMePhotoItemDelegate) :
     BaseRecyclerAdapter<MeMeViewHolder, MemeData>(context) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<MemeData> {

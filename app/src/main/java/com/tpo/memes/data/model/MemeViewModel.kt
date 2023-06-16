@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import com.tpo.memes.data.vo.MeMePagerResponse
 import com.tpo.memes.data.vo.MeMeResponse
 
-class CocktailViewModel : BaseViewModel() {
+class MemeViewModel : BaseViewModel() {
     val memeListResponse: MutableLiveData<MeMeResponse>
     val memePagerListResponse: MutableLiveData<MeMePagerResponse>
 

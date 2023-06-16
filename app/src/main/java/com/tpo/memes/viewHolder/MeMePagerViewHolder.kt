@@ -10,7 +10,7 @@ import com.tpo.memes.R
 import com.tpo.memes.data.vo.MeMePagerData
 import com.tpo.memes.delegate.MeMePagerItemClickDelegate
 
-class MeMePagerViewHolder(itemView: View, val delegate: MeMePagerItemClickDelegate) :
+class MeMePagerViewHolder(itemView: View, private val delegate: MeMePagerItemClickDelegate) :
     BaseViewHolder<MeMePagerData>(itemView) {
     var imageView: ShapeableImageView? = null
     var itemName: TextView? = null
@@ -30,11 +30,9 @@ class MeMePagerViewHolder(itemView: View, val delegate: MeMePagerItemClickDelega
         itemName!!.text = mData.title
         topTextName!!.text = mData.subreddit
         ratingText!!.text = mData.ups.toString()
-
     }
 
     override fun onClick(v: View?) {
         delegate.onItemClicked(mData)
     }
-
 }

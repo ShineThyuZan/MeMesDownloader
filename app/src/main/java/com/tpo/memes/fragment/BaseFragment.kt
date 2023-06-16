@@ -1,4 +1,4 @@
-package com.tpo.memes.Fragment
+package com.tpo.memes.fragment
 
 import android.app.ProgressDialog
 import androidx.appcompat.app.AlertDialog

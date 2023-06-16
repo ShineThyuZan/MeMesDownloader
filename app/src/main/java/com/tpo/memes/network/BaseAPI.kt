@@ -8,7 +8,6 @@ import retrofit2.http.Path
 
 
 interface BaseAPI {
-
     @GET("https://api.imgflip.com/get_memes")
     fun getMeMePhotoList(): Observable<MeMeResponse>
 
@@ -16,5 +15,4 @@ interface BaseAPI {
     fun getMeMePhotoPager(
         @Path("count") count: Int
     ): Observable<MeMePagerResponse>
-
 }

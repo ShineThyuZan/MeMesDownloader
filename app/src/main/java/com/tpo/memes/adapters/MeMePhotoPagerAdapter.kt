@@ -11,7 +11,7 @@ import com.tpo.memes.viewHolder.BaseViewHolder
 import com.tpo.memes.viewHolder.MeMePagerViewHolder
 
 
-class MeMePhotoPagerAdapter (context: Context, val delegate: MeMePagerItemClickDelegate) :
+class MeMePhotoPagerAdapter (context: Context, private val delegate: MeMePagerItemClickDelegate) :
     BaseRecyclerAdapter<MeMePagerViewHolder, MeMePagerData>(context) {
     private val VIEW_TYPE_ITEM = 0
     private val VIEW_TYPE_LOADING = 1

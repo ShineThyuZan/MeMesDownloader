@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
@@ -13,15 +12,13 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.tpo.memes.Fragment.MeMePhotoListFragment
-import com.tpo.memes.Fragment.MeMePhotoPagerFragment
+import com.tpo.memes.fragment.MeMePhotoListFragment
+import com.tpo.memes.fragment.MeMePhotoPagerFragment
 import com.tpo.memes.R
-
 import kotlin.system.exitProcess
 
 class MeMePhotoShowActivity : BaseActivity() {
     private var doubleBackToExitPressedOnce = false
-    private lateinit var active: Fragment
     private var fragPhotoList: Fragment = MeMePhotoListFragment()
     private var fragPhotoPagerList: Fragment = MeMePhotoPagerFragment()
     private lateinit var navView: BottomNavigationView
@@ -30,14 +27,12 @@ class MeMePhotoShowActivity : BaseActivity() {
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navi_meme -> {
-                    Log.d("frag", "1st frag")
                     supportFragmentManager.beginTransaction().replace(R.id.container, fragPhotoList)
                         .commit()
-
                     return@OnNavigationItemSelectedListener true
                 }
+
                 R.id.navi_pager -> {
-                    Log.d("frag", "2st frag")
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.container, fragPhotoPagerList).commit()
 
@@ -63,17 +58,12 @@ class MeMePhotoShowActivity : BaseActivity() {
     }
 
     override fun onBackPressed() {
-//        if (isFirstTime) {
-//            findViewById<RecyclerView>(R.id.rvMeMeList).smoothScrollToPosition(0)
-//            isFirstTime = false
-//        } else {
         if (this.findViewById<DrawerLayout>(R.id.drawerLayout)
                 .isDrawerOpen(GravityCompat.START)
         ) {
             this.findViewById<DrawerLayout>(R.id.drawerLayout).closeDrawer(GravityCompat.START)
         } else {
             if (doubleBackToExitPressedOnce) {
-                //  finish()
                 moveTaskToBack(true)
                 exitProcess(-0)
             }
@@ -81,7 +71,6 @@ class MeMePhotoShowActivity : BaseActivity() {
             showBackConfirmDialog()
             Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
         }
-        //  }
     }
 
     private fun showBackConfirmDialog() {
@@ -101,10 +90,8 @@ class MeMePhotoShowActivity : BaseActivity() {
             dialog.dismiss()
         }
         exitBtn.setOnClickListener {
-            //todo delete dataStore userAccessToken key and LoginState
             finish()
         }
         dialog.show()
     }
-
 }

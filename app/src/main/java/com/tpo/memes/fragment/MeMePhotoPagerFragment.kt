@@ -1,4 +1,4 @@
-package com.tpo.memes.Fragment
+package com.tpo.memes.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,14 +15,14 @@ import com.google.android.gms.ads.MobileAds
 import com.tpo.memes.R
 import com.tpo.memes.activities.FullScreenImageActivity
 import com.tpo.memes.adapters.MeMePhotoPagerAdapter
-import com.tpo.memes.data.model.CocktailViewModel
+import com.tpo.memes.data.model.MemeViewModel
 import com.tpo.memes.data.vo.MeMePagerData
 import com.tpo.memes.delegate.MeMePagerItemClickDelegate
 
 class MeMePhotoPagerFragment : BaseFragment() {
     private lateinit var mView: View
     private lateinit var memePhotoPagerAdapter: MeMePhotoPagerAdapter
-    private lateinit var mViewModel: CocktailViewModel
+    private lateinit var mViewModel: MemeViewModel
     private var mAdView: AdView? = null
     private lateinit var memeDataList: MutableList<MeMePagerData>
     private var pageNumber = 25
@@ -42,7 +42,7 @@ class MeMePhotoPagerFragment : BaseFragment() {
             mAdView!!.loadAd(adRequest)
         }
 
-        mViewModel = ViewModelProviders.of(requireActivity())[CocktailViewModel::class.java]
+        mViewModel = ViewModelProviders.of(requireActivity())[MemeViewModel::class.java]
 
         mViewModel.getMeMePhotoPager(pageNumber++)
         memePhotoPagerAdapter =

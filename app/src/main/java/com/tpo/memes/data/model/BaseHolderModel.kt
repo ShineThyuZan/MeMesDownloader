@@ -38,7 +38,7 @@ class BaseHolderModel : RetrofitProvider() {
     }
 
     fun getMeMePhotoPager(
-        pageCount : Int ,
+        pageCount: Int,
         mMemeResponse: MutableLiveData<MeMePagerResponse>,
         mErrorLD: MutableLiveData<String>
     ): Disposable {

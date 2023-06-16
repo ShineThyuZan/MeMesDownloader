@@ -1,10 +1,11 @@
-package com.tpo.memes.Fragment
+package com.tpo.memes.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -15,14 +16,14 @@ import com.google.android.gms.ads.MobileAds
 import com.tpo.memes.R
 import com.tpo.memes.activities.FullScreenImageActivity
 import com.tpo.memes.adapters.MemePhotoListAdapter
-import com.tpo.memes.data.model.CocktailViewModel
+import com.tpo.memes.data.model.MemeViewModel
 import com.tpo.memes.data.vo.MemeData
 import com.tpo.memes.delegate.MeMePhotoItemDelegate
 
 class MeMePhotoListFragment : BaseFragment(), MeMePhotoItemDelegate {
     private lateinit var mView: View
     private lateinit var memePhotoListAdapter: MemePhotoListAdapter
-    private lateinit var mViewModel: CocktailViewModel
+    private lateinit var mViewModel: MemeViewModel
     private var mAdView: AdView? = null
     private lateinit var memeDataList: MutableList<MemeData>
     var isFirstTime = true
@@ -31,7 +32,7 @@ class MeMePhotoListFragment : BaseFragment(), MeMePhotoItemDelegate {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         mView = inflater.inflate(R.layout.fragment_meme_photo, container, false)
 
         MobileAds.initialize(requireContext()) {
@@ -40,20 +41,16 @@ class MeMePhotoListFragment : BaseFragment(), MeMePhotoItemDelegate {
             mAdView!!.loadAd(adRequest)
         }
 
-        mViewModel = ViewModelProviders.of(requireActivity())
-            .get(CocktailViewModel::class.java)
+        mViewModel = ViewModelProviders.of(requireActivity())[MemeViewModel::class.java]
 
-        // create adapter
+        /** Create Adapter*/
         memePhotoListAdapter = MemePhotoListAdapter(requireContext(), this)
 
-        // Api Call
+        /** Api Call*/
         mViewModel.getMeMeListPhoto()
         memeDataList = mutableListOf()
 
-
         observe()
-
-
 
         mView.findViewById<androidx.appcompat.widget.SearchView>(R.id.searchView)
             .setOnQueryTextListener(object :
@@ -71,7 +68,7 @@ class MeMePhotoListFragment : BaseFragment(), MeMePhotoItemDelegate {
 
                 override fun onQueryTextChange(inputSearchText: String?): Boolean {
                     if (inputSearchText.isNullOrBlank()) {
-                            memePhotoListAdapter.setNewDataList(memeDataList)
+                        memePhotoListAdapter.setNewDataList(memeDataList)
                     }
                     return true
                 }
@@ -97,14 +94,19 @@ class MeMePhotoListFragment : BaseFragment(), MeMePhotoItemDelegate {
         })
         mViewModel.mErrorLD.observe(
             requireActivity(), Observer {
-              //  Toast.makeText(requireContext(), "In error ", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Some Error Occur", Toast.LENGTH_SHORT).show()
             }
         )
     }
 
     override fun onMeMeItemClicked(memeVos: MemeData) {
-        startActivity(FullScreenImageActivity.newIntent(requireContext(), memeVos.url, memeVos.name, memeVos.box_count.toString()))
+        startActivity(
+            FullScreenImageActivity.newIntent(
+                requireContext(),
+                memeVos.url,
+                memeVos.name,
+                memeVos.box_count.toString()
+            )
+        )
     }
-
-
 }

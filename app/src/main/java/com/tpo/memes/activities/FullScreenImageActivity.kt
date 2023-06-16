@@ -79,6 +79,4 @@ class FullScreenImageActivity : BaseActivity() {
         super.onBackPressed()
         finish()
     }
-
-
 }
