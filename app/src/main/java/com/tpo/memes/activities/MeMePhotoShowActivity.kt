@@ -63,7 +63,6 @@ class MeMePhotoShowActivity : BaseActivity() {
     }
 
     override fun onBackPressed() {
-
 //        if (isFirstTime) {
 //            findViewById<RecyclerView>(R.id.rvMeMeList).smoothScrollToPosition(0)
 //            isFirstTime = false
