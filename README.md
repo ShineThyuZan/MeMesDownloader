@@ -1,7 +1,7 @@
 # MeMesDownloader
-+ This application show meme picture with ranking and show detail screen.
-+ In-detail screen includes download button, picture name, and picture rating points.
-+ User can search with picture's name from meme picture list.
++ This application showcases meme pictures with a ranking system and provides a detailed view for each image.
++ Within the detailed screen, users can find a download button, picture name, and rating points.
++ Additionally, users have the option to search for specific pictures by their names from the meme picture list.
 
 ## Include Features
 - Show Meme List Screen
